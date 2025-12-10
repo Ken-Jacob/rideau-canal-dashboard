@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rideau Canal Skateway – Real-time Monitoring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Rideau Canal Skateway – Real-time Monitoring</h1>
+      <p class="subtitle">
+        Live safety status for Dow's Lake, Fifth Avenue, and NAC
+      </p>
+      <div id="overall-status">
+        Overall Status:
+        <span id="overall-badge" class="badge badge-neutral">Loading...</span>
+      </div>
+      <p class="refresh-note">Auto-refreshes every 30 seconds</p>
+    </header>
+
+    <main>
+      <!-- Location cards -->
+      <section id="cards">
+        <div class="card" id="card-dows-lake">
+          <h2>Dow's Lake</h2>
+          <div class="status-row">
+            Status:
+            <span class="badge badge-neutral" data-role="status-badge">
+              Loading...
+            </span>
+          </div>
+          <div class="metrics">
+            <p>
+              Ice Thickness:
+              <span class="metric-value" data-role="ice-thickness">–</span> cm
+            </p>
+            <p>
+              Surface Temp:
+              <span class="metric-value" data-role="surface-temp">–</span> °C
+            </p>
+            <p>
+              External Temp:
+              <span class="metric-value" data-role="external-temp">–</span> °C
+            </p>
+            <p>
+              Snow Accumulation:
+              <span class="metric-value" data-role="snow">–</span> cm
+            </p>
+            <p class="timestamp">
+              Window End:
+              <span data-role="window-end">–</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="card" id="card-fifth-avenue">
+          <h2>Fifth Avenue</h2>
+          <div class="status-row">
+            Status:
+            <span class="badge badge-neutral" data-role="status-badge">
+              Loading...
+            </span>
+          </div>
+          <div class="metrics">
+            <p>
+              Ice Thickness:
+              <span class="metric-value" data-role="ice-thickness">–</span> cm
+            </p>
+            <p>
+              Surface Temp:
+              <span class="metric-value" data-role="surface-temp">–</span> °C
+            </p>
+            <p>
+              External Temp:
+              <span class="metric-value" data-role="external-temp">–</span> °C
+            </p>
+            <p>
+              Snow Accumulation:
+              <span class="metric-value" data-role="snow">–</span> cm
+            </p>
+            <p class="timestamp">
+              Window End:
+              <span data-role="window-end">–</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="card" id="card-nac">
+          <h2>NAC</h2>
+          <div class="status-row">
+            Status:
+            <span class="badge badge-neutral" data-role="status-badge">
+              Loading...
+            </span>
+          </div>
+          <div class="metrics">
+            <p>
+              Ice Thickness:
+              <span class="metric-value" data-role="ice-thickness">–</span> cm
+            </p>
+            <p>
+              Surface Temp:
+              <span class="metric-value" data-role="surface-temp">–</span> °C
+            </p>
+            <p>
+              External Temp:
+              <span class="metric-value" data-role="external-temp">–</span> °C
+            </p>
+            <p>
+              Snow Accumulation:
+              <span class="metric-value" data-role="snow">–</span> cm
+            </p>
+            <p class="timestamp">
+              Window End:
+              <span data-role="window-end">–</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Charts -->
+      <section id="charts">
+        <h2>Last Hour Trends</h2>
+        <div class="chart-container">
+          <h3>Ice Thickness (cm)</h3>
+          <canvas id="iceChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <h3>Surface Temperature (°C)</h3>
+          <canvas id="tempChart"></canvas>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Rideau Canal Real-time Monitoring – CST8916 Final Project</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
